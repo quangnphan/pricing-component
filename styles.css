@@ -1,0 +1,211 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("images/bg-pattern.svg");
+  background-color: hsl(230, 100%, 99%);
+  background-repeat: no-repeat;
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+}
+header {
+  background-image: url("images/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 30px;
+  padding: 50px 0;
+  text-align: center;
+}
+header h1 {
+  color: hsl(227, 35%, 25%);
+  font-weight: 800;
+}
+header p {
+  color: hsl(225, 20%, 60%);
+  font-weight: 600;
+}
+.box {
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 10px;
+  padding: 50px 40px;
+  box-shadow: 0 0 17px hsl(227, 25%, 85%);
+  width: 550px;
+  color: hsl(225, 20%, 60%);
+}
+.views-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.views-flex .page-views {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  align-self: center;
+}
+.views-flex .price {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+.views-flex .price .big-price {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: hsl(227, 35%, 25%);
+}
+.progress-bar input[type="range"] {
+  width: 100%;
+  margin: 30px auto;
+  -webkit-appearance: none;
+  height: 10px;
+  border-radius: 5px;
+  outline: none;
+  appearance: none;
+  background-color: hsl(174, 77%, 80%);
+}
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 35px;
+  height: 35px;
+  background-image: url("images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: hsl(174, 86%, 45%);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px hsl(174, 86%, 45%);
+}
+
+
+.billing {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-size: 0.8rem;
+}
+.billing .discount {
+  padding: 3px 5px;
+  background-color: hsl(14, 92%, 95%);
+  color: hsl(15, 100%, 70%);
+  border-radius: 5px;
+  align-self: center;
+}
+.billing span,
+label {
+  margin-left: 10px;
+}
+.billing .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 25px;
+  cursor: pointer;
+  margin-right: 18px;
+  margin-top: 9px;
+  background-color:hsl(0, 0%, 100%);
+}
+.billing .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.billing .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(223, 50%, 87%);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+/*toggle*/
+.billing .slider:before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 21px;
+  top: 2px;
+  left: 2px;
+  background-color: hsl(0, 0%, 100%);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.billing input:checked + .slider {
+  background-color: hsl(174, 86%, 45%);
+}
+.billing input:checked + .slider:before {
+  -webkit-transform: translateX(25px);
+  -ms-transform: translateX(25px);
+  transform: translateX(25px);
+}
+.billing .slider.round {
+  border-radius: 34px;
+}
+.billing .slider.round:before {
+  border-radius: 50%;
+}
+hr {
+    border: 1px solid hsl(0, 0%, 98%);
+    margin: 30px -30px;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.content ul{
+    list-style: url("images/icon-check.svg");
+    line-height: 25px;
+}
+.content button{
+    height: 50px;
+    width: 200px;
+    border-radius: 22px;
+    cursor: pointer;
+    outline: none;
+    align-self: center;
+    font-size: 15px;
+    border: none;
+    background-color: hsl(227, 35%, 25%);
+    color: hsl(0, 0%, 100%)
+}
+@media (max-width: 768px){
+    .container{
+        min-width: 375px;
+    }
+    header{
+        margin-top: 20px;
+    }
+    .views-flex{
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    .views-flex .page-views{
+       margin-bottom: 70px;
+    }
+    .views-flex .price{
+        margin-bottom: -50px;
+    }
+    .progress-bar{
+        position: relative;
+        top:-60px;
+        margin-bottom: 0;
+    }
+    .box{
+        max-width: 450px;
+    }
+    .content{
+        flex-direction: column;
+        text-align: center;
+    }
+    .content button{
+        margin-top: 30px;
+    }
+}
